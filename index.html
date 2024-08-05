@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Invitaciones</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+    <div class="container">
+        <div id="infoSection" class="info-section">
+            <h1>Bienvenido al Generador de Invitaciones</h1>
+            <p>Esta aplicación te permite crear invitaciones personalizadas que puedes descargar en formato PDF. Puedes añadir un título para el evento, seleccionar una imagen de portada, definir la fecha y la ubicación del evento, y añadir una descripción.</p>
+            <p>Para comenzar, llena los campos del formulario y usa el botón para generar el PDF de tu invitación.</p>
+            <button id="startButton">Empezar a Crear Invitación</button>
+        </div>
+        <div id="mainContent" class="main-content">
+            <form id="invitationForm">
+                <label for="eventTitle">Título del Evento:</label>
+                <input type="text" id="eventTitle" placeholder="Título del evento" required>
+
+                <label for="eventDate">Fecha del Evento:</label>
+                <input type="date" id="eventDate" required>
+
+                <label for="eventLocation">Ubicación:</label>
+                <input type="text" id="eventLocation" placeholder="Ubicación del evento" required>
+
+                <label for="eventDescription">Descripción:</label>
+                <textarea id="eventDescription" placeholder="Descripción del evento" required></textarea>
+
+                <label for="uploadImage">Imagen de Portada:</label>
+                <input type="file" id="uploadImage" accept="image/*">
+            </form>
+            <div id="invitationPreview" class="invitation-preview">
+                <h2 id="previewTitle"></h2>
+                <img id="previewImage" src="" alt="Imagen de Portada">
+                <p id="previewDescription"></p>
+                <p id="previewDate"></p>
+                <p id="previewLocation"></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
